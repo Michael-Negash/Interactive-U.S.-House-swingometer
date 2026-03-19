@@ -1,7 +1,7 @@
 /*
  * ─────────────────────────────────────────────────────────────────────────────
  *  House Demographic Swingometer — swingometer.js
- *  © Open Source Zone  |  https://oszpolls.com
+ *  © Open Source Zone
  *
  *  NOTICE: This file is a stripped portfolio demo.
  *  The real district VAP dataset, per-district margin adjustments, and
