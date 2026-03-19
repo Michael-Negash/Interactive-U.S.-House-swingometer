@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>House Demographic Swingometer — Portfolio Demo</title>
+  <meta name="description" content="Interactive House demographic swingometer — portfolio demo. Data stubs only; full district data not included.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ── Header ── -->
+    <section class="card headline">
+      <h1>House Demographic Swingometer</h1>
+      <p class="lead">Adjust racial turnout and party split — the seat bar and district map update live.</p>
+      <div class="demo-notice">
+        ⚠️ <strong>Portfolio demo.</strong> District data has been replaced with stub values.
+        Full district-level VAP data and margin files are not included in this repository.
+      </div>
+    </section>
+
+    <!-- ── Main layout ── -->
+    <section class="layout">
+
+      <!-- Left: Race controls -->
+      <aside>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Race controls (nationwide)</h3>
+          <div id="raceControls" class="controls-grid"></div>
+          <p class="muted" style="margin-top:6px">
+            Controls apply to all districts.
+            Raise a group's turnout to 100% to see its full nationwide effect.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Right: Seat bar + Map -->
+      <section>
+        <div class="card nat-wrap">
+          <div id="popularSummary"></div>
+          <div class="bar" id="natBar"></div>
+        </div>
+
+        <div class="card" style="margin-top:10px">
+          <h3 style="margin:0 0 8px">District Map</h3>
+          <div class="map-container" id="mapContainer" aria-label="District map">
+            <div id="svgLoading" class="muted">Loading map…</div>
+            <div id="mapTooltip" class="tooltip" role="dialog" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+  </div><!-- /container -->
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   House Demographic Swingometer — swingometer.css
+   © Open Source Zone  |  https://oszpolls.com
+───────────────────────────────────────────────────────────────────────────── */
+
+/* ── Design tokens ── */
+:root {
+  --bg:      #f6f8fb;
+  --card:    #ffffff;
+  --muted:   #64748b;
+  --accent:  #0f586b;
+  --dem:     #2563eb;
+  --rep:     #ef4444;
+  --max:     1100px;
+  --gap:     8px;
+  --radius:  14px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 16px;
+  background: var(--bg);
+  font-family: system-ui, sans-serif;
+  color: #0f172a;
+}
+
+/* ── Layout ── */
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  gap: var(--gap);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+/* ── Card ── */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+/* ── Headline ── */
+.headline h1 { margin: 0 0 4px; font-size: 22px; }
+.lead        { margin: 0; color: var(--muted); font-size: 13px; }
+
+.demo-notice {
+  background: #fffbeb;
+  border: 1px solid #fbbf24;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #92400e;
+  margin-top: 8px;
+}
+
+/* ── Race controls ── */
+.controls-grid { display: grid; gap: 2px; }
+
+.race-card {
+  padding: 8px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(163, 163, 163, 0.18), rgba(15, 107, 136, 0.01));
+  border: 1px solid rgba(15, 107, 136, 0.06);
+}
+
+.race-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.race-header .label { font-weight: 600; font-size: 14px; }
+.race-share          { font-size: 12px; color: var(--muted); }
+
+.muted { color: var(--muted); font-size: 12px; }
+
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.percent {
+  min-width: 34px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.percent.left  { color: var(--dem); }
+.percent.right { color: var(--rep); }
+
+/* ── Range sliders ── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1;
+  height: 10px;
+  background: transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #bdbdbd;
+  border: 3px solid #e9eef3;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  margin-top: -3px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #bdbdbd;
+  border: 3px solid #e9eef3;
+}
+
+/* ── Seat bar ── */
+.nat-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bar {
+  height: 38px;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+}
+
+.bar div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  font-size: 14px;
+}
+
+/* ── Popular vote summary ── */
+#popularSummary { font-size: 15px; font-weight: 700; }
+
+/* ── Map ── */
+.map-container {
+  position: relative;
+  min-height: 340px;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.map-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Tooltip ── */
+.tooltip {
+  position: absolute;
+  z-index: 60;
+  background: var(--card);
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 10px 26px rgba(2, 6, 23, 0.12);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  pointer-events: auto;
+  min-width: 220px;
+  max-width: 320px;
+  font-size: 13px;
+  display: none;
+}
+
+.tooltip .close-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 18px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip .close-btn:hover { background: rgba(15, 23, 42, 0.04); }
