@@ -3,7 +3,10 @@ Interactive U.S. House swingometer — drag sliders to reshape the electoral map
 <div align="center">
 
 
-https://github.com/user-attachments/assets/c813d544-5581-4329-b911-bf4491ba9a84
+
+
+https://github.com/user-attachments/assets/52d83343-ab99-433b-bb18-1ece62356638
+
 
 </div>
 
